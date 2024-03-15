@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "match": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "answerId": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "correct": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "score": {
+      "type": "string",
+      "enum": [
+        "PASSED",
+        "FAILED"
+      ]
+    }
+  }
+}

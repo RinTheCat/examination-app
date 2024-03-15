@@ -1,1 +1,2 @@
-# examination-app
+- build jar file via maven (jdk 17 should be installed)
+- start docker compose

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="changelog.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="01.00" author="ponomarev.s">
+        <tagDatabase tag="01.00"/>
+    </changeSet>
+
+    <include file="init_tables.sql" relativeToChangelogFile="true"/>
+
+    <changeSet id="import_questions" author="ponomarev.s">
+        <loadData
+                schemaName="exam"
+                tableName="question"
+                file="data/question.csv"
+                relativeToChangelogFile="true"
+                separator=";"
+        />
+    </changeSet>
+
+    <changeSet id="import_answers" author="ponomarev.s">
+        <loadData
+                schemaName="exam"
+                tableName="answer"
+                file="data/answer.csv"
+                relativeToChangelogFile="true"
+                separator=";"
+        />
+    </changeSet>
+
+</databaseChangeLog>
